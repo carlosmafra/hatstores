@@ -9,7 +9,8 @@ class Admin::XmlController < ApplicationController
 			#i.xpath('DESCRICAO').children.text
 			p = Produto.find_by_code(i.xpath('CODIGO').children.text)
 			if p
-				@exists << i
+				p i
+
 			else
 				@nao_exists << i				
 			end
