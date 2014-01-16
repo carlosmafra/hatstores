@@ -9,6 +9,9 @@ gem 'pg'
 #authentication
 gem 'devise'
 
+#XML READER
+gem 'nokogiri'
+
 #Twitter Bootstrap
 gem "twitter-bootstrap-rails"
 
