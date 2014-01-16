@@ -6,20 +6,21 @@
 
 	</thead>
 	<tbody>
-	<% @array_produtos.map do |produto| %>		
-		<% if produto[:exists] == '0' %>
-				<tr class="tr-green">
-					<td><%= produto[:name] %></td>			
-					<td><%= produto[:codigo] %></td>
-					<td><%= produto[:preco] %></td>				
-				</tr>
-		<% else %>
-				<tr class="tr-red">
-					<td><%= produto[:name] %></td>			
-					<td><%= produto[:codigo] %></td>
-					<td><%= produto[:preco] %></td>								
-				</tr>
+	
+		<% @array_produtos.map do |produto| %>		
+			<% if produto[:exists] == '0' %>
+					<tr class="tr-green">
+						<td><%= text_field_tag(produto[:name], produto[:name]) %></td>			
+						<td><%= produto[:codigo] %></td>
+						<td><%= produto[:preco] %></td>				
+					</tr>
+			<% else %>
+					<tr class="tr-red">
+						<td><%= produto[:name] %></td>			
+						<td><%= produto[:codigo] %></td>
+						<td><%= produto[:preco] %></td>								
+					</tr>
+			<% end %>
 		<% end %>
-	<% end %>
 	</tbody>
 </table>

@@ -1,13 +1,13 @@
 Hatstore::Application.routes.draw do
-  namespace :admin do
-    resources :produtos
-  end
-
   devise_for :admin_users, :path => "admin", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
 
   root to: 'admin/xml#index'
   namespace :admin do
       resources :xml, only: [:index]
+          resources :produtos
+          resources :xml do
+              post 'create_produtos', on: :collection
+          end
   end
   
 
