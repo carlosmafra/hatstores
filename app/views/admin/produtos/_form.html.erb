@@ -1,10 +1,10 @@
-<%= form_for(@produto) do |f| %>
-  <% if @produto.errors.any? %>
+<%= form_for(@admin_produto) do |f| %>
+  <% if @admin_produto.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
+      <h2><%= pluralize(@admin_produto.errors.count, "error") %> prohibited this admin_produto from being saved:</h2>
 
       <ul>
-      <% @produto.errors.full_messages.each do |msg| %>
+      <% @admin_produto.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>

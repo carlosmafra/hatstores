@@ -1,6 +1,6 @@
-class CreateProdutos < ActiveRecord::Migration
+class CreateAdminProdutos < ActiveRecord::Migration
   def change
-    create_table :produtos do |t|
+    create_table :admin_produtos do |t|
       t.string :code
       t.text :name
       t.text :url

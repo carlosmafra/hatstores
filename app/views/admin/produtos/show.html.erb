@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @admin_produto.code %>
+</p>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin_produto.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @admin_produto.url %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @admin_produto.price %>
+</p>
+
+<p>
+  <strong>Nparcela:</strong>
+  <%= @admin_produto.nparcela %>
+</p>
+
+<p>
+  <strong>Vparcela:</strong>
+  <%= @admin_produto.vparcela %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @admin_produto.image %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @admin_produto.marca %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_produto_path(@admin_produto) %> |
+<%= link_to 'Back', admin_produtos_path %>
