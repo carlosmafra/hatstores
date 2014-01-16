@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  name: MyText
+  url: MyText
+  price: 1.5
+  nparcela: 1
+  vparcela: 1.5
+  image: MyString
+  marca: MyString
+
+two:
+  code: MyString
+  name: MyText
+  url: MyText
+  price: 1.5
+  nparcela: 1
+  vparcela: 1.5
+  image: MyString
+  marca: MyString

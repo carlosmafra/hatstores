@@ -1,0 +1,7 @@
+<% @doc.xpath('//PRODUTOS/PRODUTO').each do |i| %>
+		<p>
+			<h1>Produto</h1>
+			<p> Nome:  <%= i.xpath('DESCRICAO').children.text %> </p>
+  			<p> Códig: <%= i.xpath('CODIGO').children.text %> </p>
+  		<p>	
+ <% end %>
