@@ -9,6 +9,9 @@ gem 'pg'
 #authentication
 gem 'devise'
 
+#Twitter Bootstrap
+gem "twitter-bootstrap-rails"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
