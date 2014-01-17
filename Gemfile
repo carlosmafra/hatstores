@@ -13,6 +13,7 @@ gem 'nokogiri'
 
 #Editor de Imagem
 gem 'carrierwave'
+gem 'fog'
 
 #Twitter Bootstrap
 gem "twitter-bootstrap-rails"

@@ -6,11 +6,12 @@
 <table class="table table-striped">
   <thead>
       <td>Name</td>
-      <td>Codigo</td>
+      <td>Codigo</td>      
       <td>Preco</td>
-      <td>Url</td>
       <td>N Parcela</td>
       <td>V Parcela</td>
+      <td>Imagem</td>
+
       <td>Marca</td>
   </thead>
 
@@ -19,11 +20,10 @@
       <tr>
         <td><%= admin_produto.code %></td>
         <td><%= admin_produto.name %></td>
-        <td><%= admin_produto.url %></td>
         <td><%= admin_produto.price %></td>
         <td><%= admin_produto.nparcela %></td>
         <td><%= admin_produto.vparcela %></td>
-        <td><%= admin_produto.image %></td>
+        <td><a href="<%= admin_produto.image.url %>"><img src="<%= admin_produto.image.url %>" /></a></td>
         <td><%= admin_produto.marca %></td>
         <td><%= link_to 'Exibir', admin_produto %></td>
         <td><%= link_to 'Editar', edit_admin_produto_path(admin_produto) %></td>

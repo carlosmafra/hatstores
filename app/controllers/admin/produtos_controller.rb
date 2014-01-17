@@ -16,6 +16,7 @@ class Admin::ProdutosController < ApplicationController
   def new
     @admin_produto = Admin::Produto.new
   end
+
   def create_or_update_produtos
     params[:admin_produto][:produto].each.with_index(0) do |a,index|
         if a[1]["exists"] != nil
@@ -82,7 +83,6 @@ class Admin::ProdutosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_produto_params
-      #params.require(:admin_produto).permit(:code, :name, :url, :price, :nparcela, :vparcela, :image, :marca)
-      params.permit(:code, :name, :url, :price, :nparcela, :vparcela, :image, :marca)
+      params.require(:admin_produto).permit(:code, :name, :url, :price, :nparcela, :vparcela, :image, :marca)
     end
 end

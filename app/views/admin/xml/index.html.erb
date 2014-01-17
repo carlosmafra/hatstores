@@ -12,9 +12,6 @@
 			<td>Name</td>
 			<td>Codigo</td>
 			<td>Preco</td>
-			<td>Url</td>
-			<td>N Parcela</td>
-			<td>V Parcela</td>
 			<td>Marca</td>
 
 		</thead>
@@ -27,11 +24,13 @@
 								<td><input id="admin_produto_exists" name="admin_produto[produto][<%= index %>][exists]" type="checkbox" value="0" checked="checked"></td>
 								<td><%= f.text_field :name, value: produto[:name],:name => "admin_produto[produto][#{index}][name]" %></td>			
 								<td><%= f.text_field :codigo, value: produto[:codigo],:name => "admin_produto[produto][#{index}][codigo]" %></td>	
-								<td><%= f.text_field :preco, value: produto[:preco],:name => "admin_produto[produto][#{index}][preco]" %></td>	
-								<td><%= f.text_field :url, value: produto[:url],:name => "admin_produto[produto][#{index}][url]" %></td>	
-								<td><%= f.text_field :nparcela, value: produto[:nparcela],:name => "admin_produto[produto][#{index}][nparcela]" %></td>	
-								<td><%= f.text_field :vparcela, value: produto[:vparcela],:name => "admin_produto[produto][#{index}][vparcela]" %></td>	
-								<td><%= f.text_field :marca, value: produto[:marca],:name => "admin_produto[produto][#{index}][marca]" %></td>	
+								<td><%= f.text_field :preco, value: produto[:preco],:name => "admin_produto[produto][#{index}][preco]" %></td>
+
+								<td><%= f.text_field :marca, value: produto[:marca],:name => "admin_produto[produto][#{index}][marca]" %></td>
+
+								<td><%= f.hidden_field :url, value: produto[:url],:name => "admin_produto[produto][#{index}][url]" %></td>	
+								<td><%= f.hidden_field :nparcela, value: produto[:nparcela],:name => "admin_produto[produto][#{index}][nparcela]" %></td>	
+								<td><%= f.hidden_field :vparcela, value: produto[:vparcela],:name => "admin_produto[produto][#{index}][vparcela]" %></td>		
 							</tr>
 					<% else %>
 							<tr class="tr-red">
@@ -39,10 +38,11 @@
 								<td><%= f.text_field :name, value: produto[:name],:name => "admin_produto[produto][#{index}][name]" %></td>			
 								<td><%= f.text_field :codigo, value: produto[:codigo],:name => "admin_produto[produto][#{index}][codigo]" %></td>	
 								<td><%= f.text_field :preco, value: produto[:preco],:name => "admin_produto[produto][#{index}][preco]" %></td>
-								<td><%= f.text_field :url, value: produto[:url],:name => "admin_produto[produto][#{index}][url]" %></td>	
-								<td><%= f.text_field :nparcela, value: produto[:nparcela],:name => "admin_produto[produto][#{index}][nparcela]" %></td>	
-								<td><%= f.text_field :vparcela, value: produto[:vparcela],:name => "admin_produto[produto][#{index}][vparcela]" %></td>	
 								<td><%= f.text_field :marca, value: produto[:marca],:name => "admin_produto[produto][#{index}][marca]" %></td>								
+								<td><%= f.hidden_field :url, value: produto[:url],:name => "admin_produto[produto][#{index}][url]" %></td>	
+								<td><%= f.hidden_field :nparcela, value: produto[:nparcela],:name => "admin_produto[produto][#{index}][nparcela]" %></td>	
+								<td><%= f.hidden_field :vparcela, value: produto[:vparcela],:name => "admin_produto[produto][#{index}][vparcela]" %></td>	
+								
 							</tr>
 					<% end %>
 				<% end %>
