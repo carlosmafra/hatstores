@@ -11,6 +11,9 @@ gem 'devise'
 #XML READER
 gem 'nokogiri'
 
+#Editor de Imagem
+gem 'carrierwave'
+
 #Twitter Bootstrap
 gem "twitter-bootstrap-rails"
 
