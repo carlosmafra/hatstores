@@ -1,26 +1,51 @@
-<table class="table">
-	<thead>
-		<td>Name</td>
-		<td>Codigo</td>
-		<td>Preco</td>
+<div class="table-responsive">
+	<table class="table">
+		<thead>
+			<td>Checked</td>
+			<td>Name</td>
+			<td>Codigo</td>
+			<td>Preco</td>
+			<td>Url</td>
+			<td>N Parcela</td>
+			<td>V Parcela</td>
+			<td>Marca</td>
 
-	</thead>
-	<tbody>
-	
-		<% @array_produtos.map do |produto| %>		
-			<% if produto[:exists] == '0' %>
-					<tr class="tr-green">
-						<td><%= text_field_tag(produto[:name], produto[:name]) %></td>			
-						<td><%= produto[:codigo] %></td>
-						<td><%= produto[:preco] %></td>				
-					</tr>
-			<% else %>
-					<tr class="tr-red">
-						<td><%= produto[:name] %></td>			
-						<td><%= produto[:codigo] %></td>
-						<td><%= produto[:preco] %></td>								
-					</tr>
-			<% end %>
+		</thead>
+		<tbody>
+			<%= form_for @xml, url: {action: "create_or_update_produtos", controller: "admin/produtos"}, html: {class: "nifty_form"} do |f| %>
+				<% @array_produtos.map.with_index(0)  do |produto, index| %>		
+					<% if produto[:exists] == '0' %>
+							<tr class="tr-green">
+
+								<td><input id="admin_produto_exists" name="admin_produto[produto][<%= index %>][exists]" type="checkbox" value="0" checked="checked"></td>
+								<td><%= f.text_field :name, value: produto[:name],:name => "admin_produto[produto][#{index}][name]" %></td>			
+								<td><%= f.text_field :codigo, value: produto[:codigo],:name => "admin_produto[produto][#{index}][codigo]" %></td>	
+								<td><%= f.text_field :preco, value: produto[:preco],:name => "admin_produto[produto][#{index}][preco]" %></td>	
+								<td><%= f.text_field :url, value: produto[:url],:name => "admin_produto[produto][#{index}][url]" %></td>	
+								<td><%= f.text_field :nparcela, value: produto[:nparcela],:name => "admin_produto[produto][#{index}][nparcela]" %></td>	
+								<td><%= f.text_field :vparcela, value: produto[:vparcela],:name => "admin_produto[produto][#{index}][vparcela]" %></td>	
+								<td><%= f.text_field :marca, value: produto[:marca],:name => "admin_produto[produto][#{index}][marca]" %></td>	
+							</tr>
+					<% else %>
+							<tr class="tr-red">
+								<td><input id="admin_produto_exists" name="admin_produto[produto][<%= index %>][exists]" type="checkbox" value="0"></td>
+								<td><%= f.text_field :name, value: produto[:name],:name => "admin_produto[produto][#{index}][name]" %></td>			
+								<td><%= f.text_field :codigo, value: produto[:codigo],:name => "admin_produto[produto][#{index}][codigo]" %></td>	
+								<td><%= f.text_field :preco, value: produto[:preco],:name => "admin_produto[produto][#{index}][preco]" %></td>
+								<td><%= f.text_field :url, value: produto[:url],:name => "admin_produto[produto][#{index}][url]" %></td>	
+								<td><%= f.text_field :nparcela, value: produto[:nparcela],:name => "admin_produto[produto][#{index}][nparcela]" %></td>	
+								<td><%= f.text_field :vparcela, value: produto[:vparcela],:name => "admin_produto[produto][#{index}][vparcela]" %></td>	
+								<td><%= f.text_field :marca, value: produto[:marca],:name => "admin_produto[produto][#{index}][marca]" %></td>								
+							</tr>
+					<% end %>
+				<% end %>
+				<div class="xml-button-fixed">
+					<td>
+					<input name="commit" type="submit" value="Create Produto">
+					</td>
+				</div>
+				
 		<% end %>
-	</tbody>
-</table>
+		</tbody>
+	</table>
+</div>

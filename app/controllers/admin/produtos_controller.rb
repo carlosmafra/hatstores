@@ -16,7 +16,20 @@ class Admin::ProdutosController < ApplicationController
   def new
     @admin_produto = Admin::Produto.new
   end
-
+  def create_or_update_produtos
+    params[:admin_produto][:produto].each.with_index(0) do |a,index|
+        if a[1]["exists"] != nil
+          @create_or_update = Admin::Produto.find_by_code(a[1]["codigo"])
+          if @create_or_update.nil?
+            @admin_produto = Admin::Produto.create(name: a[1]["name"], code: a[1]["codigo"], price: a[1]["preco"], url: a[1]["url"], nparcela: a[1]["nparcela"], vparcela: a[1]["vparcela"], marca: a[1]["marca"])          
+          else
+            @admin_produto = @create_or_update.update(name: a[1]["name"], code: a[1]["codigo"], price: a[1]["preco"], url: a[1]["url"], nparcela: a[1]["nparcela"], vparcela: a[1]["vparcela"], marca: a[1]["marca"])          
+          end        
+        end
+    end
+    redirect_to :root
+    
+  end
   # GET /admin/produtos/1/edit
   def edit
   end
@@ -69,6 +82,7 @@ class Admin::ProdutosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_produto_params
-      params.require(:admin_produto).permit(:code, :name, :url, :price, :nparcela, :vparcela, :image, :marca)
+      #params.require(:admin_produto).permit(:code, :name, :url, :price, :nparcela, :vparcela, :image, :marca)
+      params.permit(:code, :name, :url, :price, :nparcela, :vparcela, :image, :marca)
     end
 end

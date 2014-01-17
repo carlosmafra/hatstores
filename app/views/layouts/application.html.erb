@@ -46,11 +46,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Hatstore Aplicativo</a>
+          <a class="brand" href="/">Hatstore Aplicativo</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Atualizar XML", "/"  %></li>
+              <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                      Produtos <span class="caret"></span>
+              </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><%= link_to "Lista Produtos", "/admin/produtos"  %></li>
+                  <li></li>
+                </ul>
+              <li>
+              
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
           </div><!--/.nav-collapse -->

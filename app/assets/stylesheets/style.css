@@ -5,3 +5,9 @@
 .tr-green{
 	background-color: #dff0d8;
 }
+
+.xml-button-fixed{
+	position: fixed;
+	margin-left: 11%;
+
+}

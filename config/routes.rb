@@ -4,10 +4,10 @@ Hatstore::Application.routes.draw do
   root to: 'admin/xml#index'
   namespace :admin do
       resources :xml, only: [:index]
-          resources :produtos
-          resources :xml do
-              post 'create_produtos', on: :collection
+          resources :produtos do
+            post 'create_or_update_produtos', on: :collection
           end
+          resources :xml
   end
   
 
