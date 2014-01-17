@@ -8,7 +8,6 @@ gem 'pg'
 
 #authentication
 gem 'devise'
-
 #XML READER
 gem 'nokogiri'
 

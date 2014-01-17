@@ -1,24 +1,20 @@
-<h1>Listing admin_produtos</h1>
+<h1>Lista de Produtos</h1>
 
-<table>
-<table>
+<p> Aqui lista todos os produtos dando a opção para deletar, criar e atualizar!<p>
+
+<p><b>Você possui <%= @admin_produtos.count %> produtos ativos ativos</b></p>
+<table class="table table-striped">
   <thead>
-    <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Url</th>
-      <th>Price</th>
-      <th>Nparcela</th>
-      <th>Vparcela</th>
-      <th>Image</th>
-      <th>Marca</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
+      <td>Name</td>
+      <td>Codigo</td>
+      <td>Preco</td>
+      <td>Url</td>
+      <td>N Parcela</td>
+      <td>V Parcela</td>
+      <td>Marca</td>
   </thead>
 
-  <tbody>
+  <tbody class="">
     <% @admin_produtos.each do |admin_produto| %>
       <tr>
         <td><%= admin_produto.code %></td>
@@ -29,9 +25,9 @@
         <td><%= admin_produto.vparcela %></td>
         <td><%= admin_produto.image %></td>
         <td><%= admin_produto.marca %></td>
-        <td><%= link_to 'Show', admin_produto %></td>
-        <td><%= link_to 'Edit', edit_admin_produto_path(admin_produto) %></td>
-        <td><%= link_to 'Destroy', admin_produto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Exibir', admin_produto %></td>
+        <td><%= link_to 'Editar', edit_admin_produto_path(admin_produto) %></td>
+        <td><%= link_to 'Deletar', admin_produto, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
